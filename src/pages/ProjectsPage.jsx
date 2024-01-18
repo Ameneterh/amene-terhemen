@@ -10,18 +10,18 @@ import CallToAction from "../Components/CallToAction";
 import Header from "../Components/Header";
 import SkillSet from "../Components/SkillSet";
 
-export default function FormerPortfolio() {
+export default function ProjectsPage() {
   return (
     <div>
       {/* <Header /> */}
       <SideBar />
       <div className="ml-12 sm:ml-[90px] grid grid-cols-1 md:grid-cols-3">
-        <div className="col-span-1 sm:col-span-2">
-          <Introduction />
+        <div className="col-span-1 sm:col-span-2 min-h-screen">
+          {/* <Introduction />
           <About />
           <SkillSet />
           <Services />
-          <CallToAction />
+          <CallToAction /> */}
         </div>
         <div className="hidden md:block right-0">
           <ProgressBar />

@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import FormerPortfolio from "./pages/FormerPortfolio";
-import NewPortfolio from "./pages/NewPortfolio";
+import HomePage from "./pages/HomePage";
 import Header from "./Components/Header";
+import ServicesPage from "./pages/ServicesPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -11,8 +13,10 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<FormerPortfolio />} />
-        <Route path="/new" element={<NewPortfolio />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </BrowserRouter>
   );

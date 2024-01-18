@@ -8,23 +8,17 @@ import { toggleTheme } from "../redux/theme/themeSlice";
 function Header() {
   const path = useLocation().pathname;
   const location = useLocation();
-  // const { currentUser } = useSelector((state) => state.user);
   const { theme } = useSelector((state) => state.theme);
-  // const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const urlParams = new URLSearchParams(location.search);
-    const searchTermFromUrl = urlParams.get("searchTerm");
-    if (searchTermFromUrl) {
-      setSearchTerm(searchTermFromUrl);
-    }
-  }, [location.search]);
-
   return (
     <div className="sticky top-0">
-      <Navbar fluid rounded className="border-b-2 dark:bg-slate-900">
+      <Navbar
+        fluid
+        rounded
+        className="border-b-2 bg-slate-200 dark:bg-slate-900"
+      >
         <div className="flex justify-center">
           <img
             src="at-personal-logo.png"

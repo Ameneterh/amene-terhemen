@@ -1,4 +1,5 @@
 import React from "react";
+import Typewriter from "typewriter-effect";
 
 export default function Introduction() {
   return (
@@ -8,9 +9,28 @@ export default function Introduction() {
       <h2 className="uppercase mt-5 text-black dark:text-slate-400 font-medium sm:text-[13px] tracking-widest">
         hello! my name is
       </h2>
-      <h2 className="uppercase text-[40px] md:text-[70px] font-bold text-black tracking-widest leading-[60px] md:leading-[80px] mt-5">
-        amene<span className="block">terhemen</span>
+      <h2 className="uppercase text-[40px] md:text-[70px] font-bold text-black dark:text-slate-500 tracking-widest leading-[60px] md:leading-[80px] mt-5">
+        {/* amene */}
+        <span className="block">
+          <Typewriter
+            options={{
+              strings: ["amene", "terhemen"],
+              autoStart: true,
+              loop: true,
+            }}
+          />
+          {/* terhemen */}
+        </span>
       </h2>
+      <span className="uppercase font-bold text-red-500 text-xl">
+        <Typewriter
+          options={{
+            strings: "(amene terhemen)",
+            // autoStart: true,
+            // loop: true,
+          }}
+        />
+      </span>
       <h2 className="uppercase mt-5 text-gray-600 dark:text-slate-300 font-medium text-[13px] tracking-widest">
         frontend dev, graphics designer
       </h2>
