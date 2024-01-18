@@ -9,6 +9,7 @@ import Footer from "../Components/Footer";
 import CallToAction from "../Components/CallToAction";
 import Header from "../Components/Header";
 import SkillSet from "../Components/SkillSet";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   return (
@@ -22,6 +23,12 @@ export default function HomePage() {
           <SkillSet />
           <Services />
           <CallToAction />
+          <Link
+            to="/contact"
+            className="flex items-center justify-center uppercase bg-blue-700 text-white w-[200px] h-12 hover:opacity-70 mt-5 rounded-lg mx-auto"
+          >
+            contact me
+          </Link>
         </div>
         <div className="hidden md:block right-0">
           <ProgressBar />

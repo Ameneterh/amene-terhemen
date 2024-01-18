@@ -17,12 +17,12 @@ export default function CallToAction() {
           Ready to bring your ideas to life?
           <span className="block">I am here to help!</span>
         </h2>
-        <Link
+        {/* <Link
           to="/contact"
           className="flex items-center justify-center uppercase bg-blue-700 text-white w-[200px] h-12 hover:opacity-70 mt-5 rounded-lg"
         >
           contact me
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
