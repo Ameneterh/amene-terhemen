@@ -5,13 +5,13 @@ export default {
   SERVICES: "Services",
   FRONTEND: "FRONTEND DEV",
   FRONTEND_DESC:
-    "Elevate your online presence with captivating user interfaces and seamless experiences",
+    "Elevate your online presence with captivating user interfaces and seamless experiences. I design to appeal, enhance user experience, and keep users comfortable to the last line.",
 
-  GRAPHICS: "GRAPHICS DESIGNER",
+  GRAPHICS: "GRAPHICS DESIGN",
   GRAPHICS_DESC:
     "Creating visually appealing flyers, flex banners, product packaging designs, book typesetting/laying/printing, etc. These services are rendered both remotely and on site.",
 
   COACHING: "COACHING/TUTORIALS",
   COACHING_DESC:
-    "Teaching coding and graphic designs to learners f+15 years. Free Courses to student through organised enterpreneurship programmes by NGOs and FBOs.",
+    "Teaching computer appreciation, coding and graphic designs to learners of +15 years. Free Courses to student through organised enterpreneurship programmes by NGOs and FBOs.",
 };

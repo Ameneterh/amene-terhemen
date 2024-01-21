@@ -16,7 +16,7 @@ export default function ServicesPage() {
         <div className="col-span-1 sm:col-span-2 min-h-screen p-2 sm:p-4 mt-4 sm:mt-10">
           {/* for web development */}
           <div className="w-full border-2 rounded-lg relative flex flex-col mb-20">
-            <p className="absolute top-[-15px] left-[5px] bg-white px-2 dark:bg-slate-800 text-xl font-bold">
+            <p className="absolute top-[-15px] left-[5px] bg-white px-2 dark:bg-[rgb(30,40,68)] text-xl font-bold">
               Web Development Services:
             </p>
 
@@ -51,7 +51,7 @@ export default function ServicesPage() {
 
           {/* for graphics design */}
           <div className="w-full border-2 rounded-lg relative flex flex-col mb-20">
-            <p className="absolute top-[-15px] left-[5px] bg-white px-2 dark:bg-slate-800 text-xl font-bold">
+            <p className="absolute top-[-15px] left-[5px] bg-white px-2 dark:bg-[rgb(30,40,68)] text-xl font-bold">
               Graphics Design Services:
             </p>
 
@@ -91,7 +91,7 @@ export default function ServicesPage() {
 
           {/* for tutorials */}
           <div className="w-full border-2 rounded-lg relative flex flex-col">
-            <p className="absolute top-[-15px] left-[5px] bg-white px-2 dark:bg-slate-800 text-xl font-bold">
+            <p className="absolute top-[-15px] left-[5px] bg-white px-2 dark:bg-[rgb(30,40,68)] text-xl font-bold">
               Web Dev/Graphics Design Tutorial Services:
             </p>
 

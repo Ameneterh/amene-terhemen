@@ -57,7 +57,9 @@ function Header() {
             </Link>
           </Navbar.Link>
           <Navbar.Link active={path === "/contact"} as={"div"}>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact" className="hover:underline underline-offset-4">
+              Contact
+            </Link>
           </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>

@@ -54,6 +54,9 @@ export default function HomePage() {
                 />
               </span>
             </h2>
+            <h2 className="uppercase mt-5 text-gray-600 dark:text-slate-300 font-medium text-[13px] tracking-widest">
+              frontend dev, graphics designer
+            </h2>
             <span className="uppercase font-bold text-red-500 text-xl">
               <Typewriter
                 options={{
@@ -63,9 +66,6 @@ export default function HomePage() {
                 }}
               />
             </span>
-            <h2 className="uppercase mt-5 text-gray-600 dark:text-slate-300 font-medium text-[13px] tracking-widest">
-              frontend dev, graphics designer
-            </h2>
             <img
               src="/ameneindex.jpg"
               className="w-[200px] h-[200px] p-4 bg-gray-400 rounded-full mt-5"
@@ -75,7 +75,8 @@ export default function HomePage() {
           {/* <About /> */}
           <div className="mt-6 md:mt-12 px-6 md:px-44 text-center flex flex-col items-center">
             <h2 className="sm:text-[20px] md:text-[40px] font-bold">
-              Hi! I am ameneterh,
+              Hi! I am{" "}
+              <span className="underline underline-offset-4">ameneterh,</span>
               <br />a Frontend Developer and
               <br /> Graphics Designer based in Kaduna, Nigeria
             </h2>
