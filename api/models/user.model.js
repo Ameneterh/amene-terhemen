@@ -16,6 +16,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    avatar: {
+      type: String,
+      default:
+        "https://cdn.iconscout.com/icon/free/png-256/free-avatar-372-456324.png",
+    },
   },
   { timestamps: true }
 );
