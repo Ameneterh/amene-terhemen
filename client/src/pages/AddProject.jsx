@@ -18,10 +18,6 @@ export default function AddProject() {
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
 
-  const [filePdf, setFilePdf] = useState([]);
-  const [pdfUploadProgress, setPdfUploadProgress] = useState(null);
-  const [pdfUploadError, setPdfUploadError] = useState(null);
-
   const [formData, setFormData] = useState({});
   const [publishError, setPublishError] = useState(null);
 
@@ -53,7 +49,7 @@ export default function AddProject() {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setImageUploadProgress(null);
             setImageUploadError(null);
-            setFormData({ ...formData, image: downloadURL });
+            setFormData({ ...formData, projectimage: downloadURL });
           });
         }
       );
