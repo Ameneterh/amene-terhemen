@@ -137,7 +137,7 @@ export default function AddProject() {
             }
           >
             <option>Select a category</option>
-            <option value="web-dev">Web Development</option>
+            <option value="webdev">Web Development</option>
             <option value="graphics">Graphics Design</option>
             <option value="tutorials">Tutorials</option>
           </Select>
@@ -164,7 +164,7 @@ export default function AddProject() {
         />
 
         <Button type="submit" gradientDuoTone="purpleToPink" outline>
-          Publish
+          Save Project
         </Button>
 
         {publishError && (
