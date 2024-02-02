@@ -10,7 +10,7 @@ import { create } from "../controllers/project.controller.js";
 
 const router = express.Router();
 
-router.post("/create", create);
+router.post("/create", verifyToken, create);
 // router.get("/getprojects", getprojects);
 // router.delete("/deletepost/:postId/:userId", verifyToken, deletepost);
 // router.put("/updatepost/:postId/:userId", verifyToken, updatepost);

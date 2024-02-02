@@ -2,9 +2,14 @@ import mongoose from "mongoose";
 
 const projectSchema = new mongoose.Schema(
   {
-    projectimage: {
+    userId: {
       type: String,
       required: true,
+    },
+    projectimage: {
+      type: String,
+      default:
+        "https://img.favpng.com/7/6/12/vector-graphics-teamwork-planning-project-png-favpng-PHEDn0rPWvjxtyNwUwiSXGH1B.jpg",
     },
     projectname: {
       type: String,
@@ -17,6 +22,11 @@ const projectSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
+    },
+    slug: {
+      type: String,
+      required: true,
+      unique: true,
     },
   },
   { timestamps: true }
