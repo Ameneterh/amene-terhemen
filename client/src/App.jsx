@@ -9,6 +9,7 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import PrivateRoute from "./Components/PrivateRoute";
 import Dashboard from "./pages/Dashboard";
+import AddProject from "./pages/AddProject";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -25,6 +26,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route element={<PrivateRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/add-project" element={<AddProject />} />
         </Route>
       </Routes>
     </BrowserRouter>

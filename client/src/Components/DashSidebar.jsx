@@ -29,7 +29,7 @@ export default function DashSidebar() {
 
   const handleSignout = async () => {
     try {
-      const res = await fetch("/api/user/signout", {
+      const res = await fetch("/api/user/logout", {
         method: "POST",
       });
       const data = await res.json();
@@ -47,7 +47,7 @@ export default function DashSidebar() {
     <Sidebar className="w-full md:w-56">
       <Sidebar.Items>
         <Sidebar.ItemGroup className="flex flex-col gap-1">
-          {currentUser && currentUser && (
+          {currentUser && (
             <Link to="/dashboard?tab=dash">
               <Sidebar.Item
                 active={tab === "dash" || !tab}
@@ -75,7 +75,7 @@ export default function DashSidebar() {
             className="cursor-pointer"
             onClick={handleSignout}
           >
-            Sign Out
+            Log Out
           </Sidebar.Item>
         </Sidebar.ItemGroup>
       </Sidebar.Items>

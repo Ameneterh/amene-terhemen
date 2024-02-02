@@ -4,6 +4,7 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toggleTheme } from "../redux/theme/themeSlice";
+import { signOutSuccess } from "../redux/user/userSlice";
 
 function Header() {
   const path = useLocation().pathname;
@@ -15,7 +16,7 @@ function Header() {
 
   const handleSignout = async () => {
     try {
-      const res = await fetch("/api/user/signout", {
+      const res = await fetch("/api/user/logout", {
         method: "POST",
       });
       const data = await res.json();
@@ -62,7 +63,7 @@ function Header() {
                 <Dropdown.Item>Profile</Dropdown.Item>
               </Link>
               <Dropdown.Divider />
-              <Dropdown.Item onClick={handleSignout}>Sign Out</Dropdown.Item>
+              <Dropdown.Item onClick={handleSignout}>Log Out</Dropdown.Item>
             </Dropdown>
           ) : null}
           <Button

@@ -1,8 +1,10 @@
-// import express from "express";
-// import { signup } from "../controllers/user.controller.js";
+import express from "express";
+import { verifyToken } from "../utils/verifyUser.js";
+import { logout, updateUser } from "../controllers/user.controller.js";
 
-// const router = express.Router();
+const router = express.Router();
 
-// router.get("/signup", signup);
+router.post("/logout", logout);
+router.put("/update/:userId", verifyToken, updateUser);
 
-// export default router;
+export default router;

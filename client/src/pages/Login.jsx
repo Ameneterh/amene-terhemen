@@ -10,8 +10,6 @@ import {
 
 export default function Login() {
   const [formData, setFormData] = useState({});
-  // const [error, setError] = useState(null);
-  // const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { loading, error: errorMessage } = useSelector((state) => state.user);
@@ -57,13 +55,13 @@ export default function Login() {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <TextInput
           type="email"
-          placeholder="email"
+          placeholder="email@company.com"
           id="email"
           onChange={handleChange}
         />
         <TextInput
           type="password"
-          placeholder="password"
+          placeholder="*************"
           id="password"
           onChange={handleChange}
         />
