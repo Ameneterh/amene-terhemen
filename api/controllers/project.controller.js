@@ -68,19 +68,21 @@ export const getprojects = async (req, res, next) => {
   }
 };
 
-// export const deletepost = async (req, res, next) => {
-//   if (!req.user.isAdmin || req.user.id !== req.params.userId) {
-//     return next(errorHandler(403, "YOu are not allowed to delete this post"));
-//   }
-//   try {
-//     await Post.findByIdAndDelete(req.params.postId);
-//     res
-//       .status(200)
-//       .json(`The post with id ${req.params.postId} has been deleted`);
-//   } catch (error) {
-//     next(error);
-//   }
-// };
+export const deleteproject = async (req, res, next) => {
+  if (req.user.userId !== req.params.userId) {
+    return next(
+      errorHandler(403, "YOu are not allowed to delete this Project")
+    );
+  }
+  try {
+    await Project.findByIdAndDelete(req.params.projectId);
+    res
+      .status(200)
+      .json(`The project with id ${req.params.projectId} has been deleted`);
+  } catch (error) {
+    next(error);
+  }
+};
 
 export const updateproject = async (req, res, next) => {
   console.log(req.user);
