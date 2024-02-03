@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import PrivateRoute from "./Components/PrivateRoute";
 import Dashboard from "./pages/Dashboard";
 import AddProject from "./pages/AddProject";
+import ProjectView from "./pages/ProjectView";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,6 +25,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/project/:slug" element={<ProjectView />} />
         <Route element={<PrivateRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/add-project" element={<AddProject />} />

@@ -1,6 +1,6 @@
 import express from "express";
 import { verifyToken } from "../utils/verifyUser.js";
-import { create } from "../controllers/project.controller.js";
+import { create, getprojects } from "../controllers/project.controller.js";
 // import {
 //   create,
 //   deletepost,
@@ -11,7 +11,7 @@ import { create } from "../controllers/project.controller.js";
 const router = express.Router();
 
 router.post("/create", verifyToken, create);
-// router.get("/getprojects", getprojects);
+router.get("/getprojects", getprojects);
 // router.delete("/deletepost/:postId/:userId", verifyToken, deletepost);
 // router.put("/updatepost/:postId/:userId", verifyToken, updatepost);
 

@@ -9,7 +9,7 @@ const projectSchema = new mongoose.Schema(
     projectimage: {
       type: String,
       default:
-        "https://img.favpng.com/7/6/12/vector-graphics-teamwork-planning-project-png-favpng-PHEDn0rPWvjxtyNwUwiSXGH1B.jpg",
+        "https://png.pngtree.com/png-vector/20220521/ourmid/pngtree-building-website-project-as-programming-homepage-process-tiny-person-vector-illustration-png-image_4658684.png",
     },
     projectname: {
       type: String,

@@ -135,7 +135,6 @@ export default function AddProject() {
             <option>Select a category</option>
             <option value="webdev">Web Development</option>
             <option value="graphics">Graphics Design</option>
-            <option value="tutorials">Tutorials</option>
           </Select>
         </div>
 
