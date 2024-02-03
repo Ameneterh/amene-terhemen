@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 
 export default function CallToAction() {
   return (
-    <div className="px-12 mt-12">
-      <div className="flex items-center">
+    <div className="mt-12">
+      <div className="flex items-center w-full">
         <div className="w-[10px] h-[10px] bg-green-600 rounded-full"></div>
         <div className="flex-1 border-[1px] mx-4 mt-[-2px]"></div>
-        <h2 className="uppercase text-[24px] font-bold">make it happen</h2>
+        <h2 className="uppercase text-[24px] font-bold flex-1">
+          make it happen
+        </h2>
         <div className="flex-1 border-[1px] mx-4 mt-[-2px]"></div>
         <div className="w-[10px] h-[10px] bg-green-600 rounded-full"></div>
       </div>

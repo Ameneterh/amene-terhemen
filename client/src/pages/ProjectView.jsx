@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Button, Spinner } from "flowbite-react";
+import { useSelector } from "react-redux";
+import { current } from "@reduxjs/toolkit";
 
 export default function ProjectView() {
   const { slug } = useParams();
@@ -8,6 +10,7 @@ export default function ProjectView() {
   const [error, setError] = useState(false);
   const [project, setProject] = useState(null);
   const [recentProjects, setRecentProjects] = useState(null);
+  const { currentUser } = useSelector((state) => state.user);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -89,6 +92,31 @@ export default function ProjectView() {
         dangerouslySetInnerHTML={{ __html: project && project.description }}
         className="p-3 max-w-2xl mx-auto w-full post-content"
       ></div>
+
+      {project.category === "webdev" ? (
+        <>
+          <Link
+            to={project.liveurl}
+            target="_blank"
+            className="mt-8 text-center hover:bg-slate-200 text-blue-700 border-2 p-2 border-blue-500 rounded-md"
+          >
+            View Project Live Link
+          </Link>
+        </>
+      ) : (
+        ""
+      )}
+
+      {currentUser ? (
+        <Link
+          to={`/updateproject/${project._id}`}
+          className="mt-8 text-center hover:underline underline-offset-4"
+        >
+          Update Project
+        </Link>
+      ) : (
+        ""
+      )}
 
       {/* <div className="flex flex-col justify-center items-center mb-5">
         <h1 className="text-xl mt-5">Recent Articles</h1>

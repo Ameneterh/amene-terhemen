@@ -39,7 +39,7 @@ function Header() {
       >
         <div className="flex justify-center">
           <img
-            src="at-personal-logo.png"
+            src="/at-personal-logo.png"
             alt="profile"
             className="w-10 h-10 md:w-16 md:h-16 rounded-full bg-white p-1 object-cover border-2 border-red-500"
           />

@@ -11,6 +11,7 @@ import PrivateRoute from "./Components/PrivateRoute";
 import Dashboard from "./pages/Dashboard";
 import AddProject from "./pages/AddProject";
 import ProjectView from "./pages/ProjectView";
+import UpdateProject from "./pages/UpdateProject";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -29,6 +30,7 @@ function App() {
         <Route element={<PrivateRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/add-project" element={<AddProject />} />
+          <Route path="/updateproject/:projectId" element={<UpdateProject />} />
         </Route>
       </Routes>
     </BrowserRouter>

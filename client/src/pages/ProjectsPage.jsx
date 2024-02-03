@@ -22,9 +22,7 @@ export default function ProjectsPage() {
     setLoading(true);
     const fetchWebdevProjects = async () => {
       try {
-        const res = await fetch(
-          "/api/project/getprojects?category=webdev&limit=3"
-        );
+        const res = await fetch("/api/project/getprojects?category=webdev");
         const data = await res.json();
         setWebdevProjects(data.projects);
         fetchGraphicsProjects();
@@ -37,9 +35,7 @@ export default function ProjectsPage() {
     const fetchGraphicsProjects = async () => {
       setLoading(true);
       try {
-        const res = await fetch(
-          "/api/project/getprojects?category=graphics&limit=3"
-        );
+        const res = await fetch("/api/project/getprojects?category=graphics");
         const data = await res.json();
         setGraphicsProjects(data.projects);
         setLoading(false);
@@ -63,7 +59,7 @@ export default function ProjectsPage() {
           )}
 
           {/* web dev projects */}
-          {webdevProjects && webdevProjects.length > 0 && (
+          {webdevProjects && webdevProjects.length > 0 ? (
             <div className="flex flex-col w-full mt-2 sm:mt-8">
               <div className="flex w-full">
                 <div className="flex w-full items-center">
@@ -78,18 +74,15 @@ export default function ProjectsPage() {
                   <ProjectsComponent project={weblist} />
                 ))}
               </div>
-
-              <Link
-                to="#"
-                className="text-blue-600 hover:underline my-10 w-full text-center text-sm"
-              >
-                View More Projects
-              </Link>
+            </div>
+          ) : (
+            <div className="w-full text-center min-h-[150px]">
+              No Web Dev Projects to load
             </div>
           )}
 
           {/* graphic designs projects */}
-          {graphicsProjects && graphicsProjects.length > 0 && (
+          {graphicsProjects && graphicsProjects.length > 0 ? (
             <div className="flex flex-col w-full mt-2 sm:mt-8">
               <div className="flex flex-col w-full">
                 <div className="flex w-full items-center">
@@ -105,12 +98,10 @@ export default function ProjectsPage() {
                   <ProjectsComponent project={graphiclist} />
                 ))}
               </div>
-              <Link
-                to="#"
-                className="text-blue-600 hover:underline my-10 w-full text-center text-sm"
-              >
-                View More Projects
-              </Link>
+            </div>
+          ) : (
+            <div className="w-full text-center min-h-[150px]">
+              No Web Dev Projects to load
             </div>
           )}
           <CallToAction />

@@ -28,6 +28,10 @@ const projectSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    liveurl: {
+      type: String,
+      unique: true,
+    },
   },
   { timestamps: true }
 );

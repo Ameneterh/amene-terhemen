@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { TextInput, Select, FileInput, Button, Alert } from "flowbite-react";
@@ -11,9 +11,10 @@ import {
 import { app } from "../firebase.js";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-export default function AddProject() {
+export default function UpdateProject() {
   const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
@@ -21,7 +22,34 @@ export default function AddProject() {
   const [formData, setFormData] = useState({});
   const [publishError, setPublishError] = useState(null);
 
+  const { currentUser } = useSelector((state) => state.user);
+  const { projectId } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    try {
+      const fetchProject = async () => {
+        const res = await fetch(
+          `/api/project/getprojects?projectId=${projectId}`
+        );
+        const data = await res.json();
+
+        if (!res.ok) {
+          console.log(data.message);
+          setPublishError(data.message);
+          return;
+        }
+
+        if (res.ok) {
+          setPublishError(null);
+          setFormData(data.projects[0]);
+        }
+      };
+      fetchProject();
+    } catch (error) {
+      console.log(error.message);
+    }
+  }, [projectId]);
 
   const handleUploadImage = async () => {
     try {
@@ -63,13 +91,16 @@ export default function AddProject() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("/api/project/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        `/api/project/updateproject/${formData._id}/${currentUser._id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       const data = await res.json();
       if (!res.ok) {
         setPublishError(data.message);
@@ -86,7 +117,9 @@ export default function AddProject() {
 
   return (
     <div className="p-3 max-w-3xl mx-auto min-h-screen">
-      <h1 className="text-center text-3xl my-7 font-semibold">Add a Project</h1>
+      <h1 className="text-center text-3xl my-7 font-semibold">
+        Update Project
+      </h1>
 
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <div className="flex gap-4 items-center justify-between border-2 border-purple-500 p-3 rounded-lg">
@@ -115,6 +148,15 @@ export default function AddProject() {
             )}
           </Button>
         </div>
+        {imageUploadError && <Alert color="failure">{imageUploadError}</Alert>}
+
+        {formData.projectimage && (
+          <img
+            src={formData.projectimage}
+            alt="upload"
+            className="w-full, h-72 object-cover"
+          />
+        )}
 
         <div className="flex flex-col gap-4 sm:flex-row justify-between">
           <TextInput
@@ -123,11 +165,13 @@ export default function AddProject() {
             required
             id="projectname"
             className="flex-1"
+            value={formData.projectname}
             onChange={(e) =>
               setFormData({ ...formData, projectname: e.target.value })
             }
           />
           <Select
+            value={formData.category}
             onChange={(e) =>
               setFormData({ ...formData, category: e.target.value })
             }
@@ -138,21 +182,12 @@ export default function AddProject() {
           </Select>
         </div>
 
-        {imageUploadError && <Alert color="failure">{imageUploadError}</Alert>}
-
-        {formData.image && (
-          <img
-            src={formData.image}
-            alt="upload"
-            className="w-full, h-72 object-cover"
-          />
-        )}
-
         <TextInput
           type="text"
           placeholder="Project URL (for webdev projects only)"
           id="liveurl"
           className="flex-1"
+          value={formData.liveurl}
           onChange={(e) =>
             setFormData({ ...formData, liveurl: e.target.value })
           }
@@ -166,10 +201,11 @@ export default function AddProject() {
           onChange={(value) => {
             setFormData({ ...formData, description: value });
           }}
+          value={formData.description}
         />
 
         <Button type="submit" gradientDuoTone="purpleToPink" outline>
-          Save Project
+          Update Project
         </Button>
 
         {publishError && (
