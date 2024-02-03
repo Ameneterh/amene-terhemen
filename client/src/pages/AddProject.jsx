@@ -116,6 +116,16 @@ export default function AddProject() {
           </Button>
         </div>
 
+        {imageUploadError && <Alert color="failure">{imageUploadError}</Alert>}
+
+        {formData.projectimage && (
+          <img
+            src={formData.projectimage}
+            alt="upload"
+            className="w-full, h-72 object-cover"
+          />
+        )}
+
         <div className="flex flex-col gap-4 sm:flex-row justify-between">
           <TextInput
             type="text"
@@ -137,16 +147,6 @@ export default function AddProject() {
             <option value="graphics">Graphics Design</option>
           </Select>
         </div>
-
-        {imageUploadError && <Alert color="failure">{imageUploadError}</Alert>}
-
-        {formData.image && (
-          <img
-            src={formData.image}
-            alt="upload"
-            className="w-full, h-72 object-cover"
-          />
-        )}
 
         <TextInput
           type="text"

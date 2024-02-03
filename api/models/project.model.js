@@ -30,7 +30,7 @@ const projectSchema = new mongoose.Schema(
     },
     liveurl: {
       type: String,
-      unique: true,
+      default: "/projects",
     },
   },
   { timestamps: true }
