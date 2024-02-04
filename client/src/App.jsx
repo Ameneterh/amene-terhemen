@@ -23,11 +23,11 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/services" element={<ServicesPage />} />
-        <Route path="/signup" element={<SignUp />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/project/:slug" element={<ProjectView />} />
         <Route element={<PrivateRoute />}>
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/add-project" element={<AddProject />} />
           <Route path="/updateproject/:projectId" element={<UpdateProject />} />
