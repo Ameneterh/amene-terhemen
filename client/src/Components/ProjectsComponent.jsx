@@ -10,7 +10,7 @@ export default function ProjectsComponent({ project }) {
         <img
           src={project.projectimage}
           alt={project.projectname}
-          className="w-full"
+          className="w-full max-h-[150px] object-cover object-top"
         />
         <p
           className="px-2 mt-2 line-clamp-4 leading-5 text-sm"

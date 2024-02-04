@@ -68,7 +68,7 @@ export default function ProjectView() {
       <img
         src={project && project.projectimage}
         alt={project && project.projectname}
-        className="mt-10 p-3 max-h-[600px] w-full object-cover"
+        className="mt-10 p-3 min-h-[600px] w-full object-cover"
       />
 
       <div className="flex justify-between p-3 border-b border-slate-500 mx-auto w-full max-w-2xl text-xs items-center">
